@@ -1,4 +1,4 @@
-if __name__ ==' __main__':
+if __name__ =='__main__':
     x = int(input("Enter X"))
     y = int(input("Enter Y"))
     z = int(input("Enter Z"))
