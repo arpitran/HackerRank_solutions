@@ -1,0 +1,1 @@
+eval(input("Enter a expression "))
