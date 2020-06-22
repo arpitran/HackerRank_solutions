@@ -16,7 +16,7 @@ def divisibleSumPairs(n, k, ar):
     return len(res)
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    
 
     nk = input().split()
 
@@ -28,6 +28,4 @@ if __name__ == '__main__':
 
     result = divisibleSumPairs(n, k, ar)
 
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+    print(str(result) + '\n')
