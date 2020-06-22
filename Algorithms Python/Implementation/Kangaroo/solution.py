@@ -6,42 +6,30 @@ import random
 import re
 import sys
 
-# Complete the countApplesAndOranges function below.
-def countApplesAndOranges(s, t, a, b, apples, oranges):
-    apples_count = 0
-    oranges_count = 0
-
-    for i in range(len(apples)):
-        if apples[i]+a >= s and apples[i]+a<=t:
-            apples_count+=1
-    for i in range(len(oranges)):
-        if b+oranges[i] <=t and b+oranges[i]>=s:
-            oranges_count+=1
-    print(apples_count)
-    print(oranges_count)
-    return
+# Complete the kangaroo function below.
+def kangaroo(x1, v1, x2, v2):
+    if (v2>=v1 and x2>x1) or (v1>=v2 and x1>x2):
+        return "NO"
+    elif  (x1 - x2) % (v2 - v1) == 0:
+        return "YES"
+    else:
+        return "NO"
 
 if __name__ == '__main__':
-    st = input().split()
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    s = int(st[0])
+    x1V1X2V2 = input().split()
 
-    t = int(st[1])
+    x1 = int(x1V1X2V2[0])
 
-    ab = input().split()
+    v1 = int(x1V1X2V2[1])
 
-    a = int(ab[0])
+    x2 = int(x1V1X2V2[2])
 
-    b = int(ab[1])
+    v2 = int(x1V1X2V2[3])
 
-    mn = input().split()
+    result = kangaroo(x1, v1, x2, v2)
 
-    m = int(mn[0])
+    fptr.write(result + '\n')
 
-    n = int(mn[1])
-
-    apples = list(map(int, input().rstrip().split()))
-
-    oranges = list(map(int, input().rstrip().split()))
-
-    countApplesAndOranges(s, t, a, b, apples, oranges)
+    fptr.close()
