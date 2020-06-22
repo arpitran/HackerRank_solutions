@@ -6,27 +6,28 @@ import random
 import re
 import sys
 
-# Complete the breakingRecords function below.
-def breakingRecords(scores):
-    highest_score = scores[0]
-    lowest_score = scores[0]
-    upper_bound_broken = 0
-    lower_bound_broken = 0
-    for i in range(len(scores)):
-        if scores[i]>highest_score:
-            upper_bound_broken+=1
-            highest_score = scores[i]
-        if scores[i]<lowest_score:
-            lower_bound_broken+=1
-            lowest_score = scores[i]
+# Complete the divisibleSumPairs function below.
+def divisibleSumPairs(n, k, ar):
+    res = []
+    for i in range(n):
+        for j in range(i+1,n):
+            if (ar[i]+ar[j])%k==0:
+                res.append([ar[i],ar[j]])
+    return len(res)
 
-
-    return [str(upper_bound_broken),str(lower_bound_broken)]
 if __name__ == '__main__':
-    n = int(input())
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    scores = list(map(int, input().rstrip().split()))
+    nk = input().split()
 
-    result = breakingRecords(scores)
+    n = int(nk[0])
 
-    print(' '.join(map(str, result)))
+    k = int(nk[1])
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = divisibleSumPairs(n, k, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
