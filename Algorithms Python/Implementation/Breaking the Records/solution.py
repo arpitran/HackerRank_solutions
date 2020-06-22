@@ -23,15 +23,10 @@ def breakingRecords(scores):
 
     return [str(upper_bound_broken),str(lower_bound_broken)]
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     n = int(input())
 
     scores = list(map(int, input().rstrip().split()))
 
     result = breakingRecords(scores)
 
-    fptr.write(' '.join(map(str, result)))
-    fptr.write('\n')
-
-    fptr.close()
+    print(' '.join(map(str, result)))
