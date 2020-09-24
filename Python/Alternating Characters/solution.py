@@ -8,12 +8,11 @@ Function Description
 Complete the alternating Characters functions in the editor below. It must return an integer representing the number of deletions to make the 
 alternating string
 """
-import unittest
 
 def alternatingCharacters(s):
     deletions = 0
-    for i in range(len(string)-1):
-        if string[i] == string[i+1]:
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
             deletions+=1
     return deletions
 
