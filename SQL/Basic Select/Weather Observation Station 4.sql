@@ -1,6 +1,10 @@
--- github.com/RodneyShag
+-- github.com/arpitran
+
+/*
+Enter your query here.
+*/
 
 SELECT 
-    COUNT(CITY) - COUNT(DISTINCT CITY)
-FROM
+    COUNT(*) - COUNT(DISTINCT CITY) 
+FROM 
     STATION;
